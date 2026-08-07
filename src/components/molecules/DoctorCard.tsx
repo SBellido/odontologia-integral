@@ -24,7 +24,8 @@ export function DoctorCard({ doctor, tone }: DoctorCardProps) {
         display: 'flex',
         flexDirection: 'column',
         gap: 1,
-        background: isDark ? gradientDark : 'background.paper',
+        background: isDark ? gradientDark : undefined,
+        bgcolor: isDark ? undefined : 'background.paper',
         color: isDark ? '#ffffff' : 'text.primary',
       }}
     >
