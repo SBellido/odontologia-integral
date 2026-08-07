@@ -1,4 +1,4 @@
-import logoSrc from '../../assets/logo.jpg';
+import logoSrc from '../../assets/logo.svg';
 import './Logo.css';
 
 interface LogoProps {
