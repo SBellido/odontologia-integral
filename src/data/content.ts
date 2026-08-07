@@ -6,14 +6,14 @@ export const doctors: Doctor[] = [
     name: 'Adrián Nader',
     specialties: ['Endodoncia', 'Implantes dentales'],
     bio: 'Especialista en tratamientos de conducto, preservación dental e implantes.',
-    photoUrl: '/src/assets/doctor-placeholder.svg',
+    licenseNumber: 'MP 13452',
   },
   {
     id: 'carolina-bellido',
     name: 'Carolina Bellido',
     specialties: ['Odontopediatría', 'Ortodoncia'],
     bio: 'Cuidado dental para niños y tratamientos de ortodoncia para todas las edades.',
-    photoUrl: '/src/assets/doctor-placeholder.svg',
+    licenseNumber: 'MP 80534',
   },
 ];
 

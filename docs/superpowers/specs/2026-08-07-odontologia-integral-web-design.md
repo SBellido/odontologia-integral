@@ -82,8 +82,9 @@ Basado en la opción "C — Cálido intermedio" validada por mockup.
 2. **Hero**: título con `GradientText` de acento + CTA "Agendar consulta" → WhatsApp.
 3. **Servicios** (grilla única, 4 tarjetas): Endodoncia, Implantes dentales, Odontopediatría, Ortodoncia — ícono + descripción corta.
 4. **Nosotros / Doctores**: `DoctorCard` para cada uno.
-   - **Adrián Nader** — Endodoncia, Implantes dentales
-   - **Carolina Bellido** — Odontopediatría, Ortodoncia
+   - **Adrián Nader** (MP 13452) — Endodoncia, Implantes dentales
+   - **Carolina Bellido** (MP 80534) — Odontopediatría, Ortodoncia
+   - En vez de foto, cada tarjeta muestra la matrícula profesional (MP).
 5. **Contacto**:
    - WhatsApp: **+54 9 11 5834-8249** (link `wa.me`, con mensaje predefinido)
    - Horarios: Lunes a Viernes, 9:00 a 20:00 hs

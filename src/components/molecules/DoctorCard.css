@@ -6,14 +6,6 @@
   gap: var(--space-xs);
 }
 
-.doctor-card__photo {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: var(--space-xs);
-}
-
 .doctor-card__specialties {
   display: flex;
   gap: var(--space-xs);
@@ -29,4 +21,12 @@
 .doctor-card--light {
   background: var(--color-surface);
   color: var(--color-ink);
+}
+
+.doctor-card__license {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  margin-top: var(--space-xs);
 }

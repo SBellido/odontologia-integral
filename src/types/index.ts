@@ -3,7 +3,7 @@ export interface Doctor {
   name: string;
   specialties: string[];
   bio: string;
-  photoUrl: string;
+  licenseNumber: string;
 }
 
 import type { IconName } from '../components/atoms/Icon';

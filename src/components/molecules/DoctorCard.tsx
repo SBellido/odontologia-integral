@@ -12,7 +12,6 @@ interface DoctorCardProps {
 export function DoctorCard({ doctor, tone }: DoctorCardProps) {
   return (
     <article className={`doctor-card doctor-card--${tone}`}>
-      <img className="doctor-card__photo" src={doctor.photoUrl} alt={doctor.name} />
       <div className="doctor-card__specialties">
         {doctor.specialties.map((specialty) => (
           <Badge key={specialty} tone={tone === 'dark' ? 'inverted' : 'default'}>
@@ -24,6 +23,7 @@ export function DoctorCard({ doctor, tone }: DoctorCardProps) {
       <Text tone={tone === 'dark' ? 'inverted' : 'soft'} size="sm">
         {doctor.bio}
       </Text>
+      <span className="doctor-card__license">{doctor.licenseNumber}</span>
     </article>
   );
 }
