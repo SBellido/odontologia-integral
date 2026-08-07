@@ -1,4 +1,7 @@
 import type { ContactInfo, Doctor, InsuranceProvider, Service } from '../types';
+import sancorLogo from '../assets/insurance/sancor.jpg';
+import swissMedicalLogo from '../assets/insurance/swiss-medical.jpg';
+import ospitLogo from '../assets/insurance/ospit.jpg';
 
 export const doctors: Doctor[] = [
   {
@@ -44,8 +47,11 @@ export const services: Service[] = [
   },
 ];
 
-// Se completa cuando el cliente envíe los logos de las obras sociales con las que trabaja
-export const insuranceProviders: InsuranceProvider[] = [];
+export const insuranceProviders: InsuranceProvider[] = [
+  { id: 'sancor-salud', name: 'SanCor Salud', logoUrl: sancorLogo },
+  { id: 'swiss-medical', name: 'Swiss Medical', logoUrl: swissMedicalLogo },
+  { id: 'ospit', name: 'OSPIT', logoUrl: ospitLogo },
+];
 
 // wa.me necesita el número sin espacios ni signos, con código de país
 export const contactInfo: ContactInfo = {

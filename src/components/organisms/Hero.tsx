@@ -2,7 +2,6 @@ import Box from '@mui/material/Box';
 import bannerSrc from '../../assets/banner.jpg';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
-import { GradientText } from '../atoms/GradientText';
 import { WhatsAppButton } from '../molecules/WhatsAppButton';
 
 export function Hero() {
@@ -56,7 +55,7 @@ export function Hero() {
           Odontología Integral
         </Text>
         <Heading level={1} sx={{ color: '#ffffff' }}>
-          Cuidado dental <GradientText inverted>de confianza</GradientText>, para toda la familia
+          Cuidado dental de confianza, para toda la familia
         </Heading>
         <Text tone="inverted" size="lg" sx={{ maxWidth: 480 }}>
           Endodoncia, implantes dentales, odontopediatría y ortodoncia, con atención cercana y

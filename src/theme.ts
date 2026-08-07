@@ -2,8 +2,6 @@ import { createTheme } from '@mui/material/styles';
 
 // Paleta fija blanco/negro (sin modo oscuro automático), con degradé como acento puntual
 export const gradientDark = 'linear-gradient(160deg, #0a0a0a 0%, #2b2b2b 100%)';
-export const gradientText = 'linear-gradient(90deg, #111111, #555555)';
-export const gradientTextInverted = 'linear-gradient(90deg, #ffffff, #b8b8b8)';
 
 export const theme = createTheme({
   palette: {

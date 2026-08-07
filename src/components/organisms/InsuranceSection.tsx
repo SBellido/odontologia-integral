@@ -28,26 +28,24 @@ export function InsuranceSection() {
     >
       <Heading level={2}>Obras sociales</Heading>
       <Text tone="soft" size="md" sx={{ maxWidth: 640 }}>
-        Trabajamos con las principales obras sociales, y también atendemos pacientes particulares.
+        Trabajamos con las siguientes obras sociales.
       </Text>
       {insuranceProviders.length > 0 && (
-        <Stack
-          direction="row"
-          gap={4}
-          alignItems="center"
-          sx={{ overflowX: 'auto', py: 1 }}
-        >
+        <Stack direction="row" gap={5} alignItems="center" sx={{ overflowX: 'auto', py: 2 }}>
           {insuranceProviders.map((provider) => (
             <Box
               key={provider.id}
               component="img"
               src={provider.logoUrl}
               alt={provider.name}
-              sx={{ height: 48, width: 'auto', flexShrink: 0 }}
+              sx={{ height: 56, width: 'auto', flexShrink: 0 }}
             />
           ))}
         </Stack>
       )}
+      <Text tone="muted" size="sm">
+        ¿No encontrás tu obra social? Consultanos — también atendemos pacientes particulares.
+      </Text>
     </Box>
   );
 }
