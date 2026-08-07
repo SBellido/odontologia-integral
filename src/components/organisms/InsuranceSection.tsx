@@ -14,38 +14,51 @@ export function InsuranceSection() {
       id="obras-sociales"
       ref={ref}
       sx={{
-        maxWidth: 1120,
-        mx: 'auto',
-        px: 3,
-        py: 8,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 3,
+        width: '100%',
+        bgcolor: 'background.paper',
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
         transition: 'opacity 0.7s ease, transform 0.7s ease',
       }}
     >
-      <Heading level={2}>Obras sociales</Heading>
-      <Text tone="soft" size="md" sx={{ maxWidth: 640 }}>
-        Trabajamos con las siguientes obras sociales.
-      </Text>
-      {insuranceProviders.length > 0 && (
-        <Stack direction="row" gap={5} alignItems="center" sx={{ overflowX: 'auto', py: 2 }}>
-          {insuranceProviders.map((provider) => (
-            <Box
-              key={provider.id}
-              component="img"
-              src={provider.logoUrl}
-              alt={provider.name}
-              sx={{ height: 56, width: 'auto', flexShrink: 0 }}
-            />
-          ))}
-        </Stack>
-      )}
-      <Text tone="muted" size="sm">
-        ¿No encontrás tu obra social? Consultanos — también atendemos pacientes particulares.
-      </Text>
+      <Box
+        sx={{
+          maxWidth: 1120,
+          mx: 'auto',
+          px: 3,
+          py: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          gap: 3,
+        }}
+      >
+        <Heading level={2}>Obras sociales</Heading>
+        {insuranceProviders.length > 0 && (
+          <Stack
+            direction="row"
+            gap={7}
+            alignItems="center"
+            justifyContent="center"
+            flexWrap="wrap"
+            sx={{ py: 2, width: '100%' }}
+          >
+            {insuranceProviders.map((provider) => (
+              <Box
+                key={provider.id}
+                component="img"
+                src={provider.logoUrl}
+                alt={provider.name}
+                sx={{ height: { xs: 64, sm: 84 }, width: 'auto' }}
+              />
+            ))}
+          </Stack>
+        )}
+        <Text tone="muted" size="sm">
+          ¿No encontrás tu obra social? Consultanos — también atendemos pacientes particulares.
+        </Text>
+      </Box>
     </Box>
   );
 }
