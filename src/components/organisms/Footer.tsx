@@ -4,6 +4,8 @@ import { contactInfo } from '../../data/content';
 import { Logo } from '../atoms/Logo';
 import { Text } from '../atoms/Text';
 
+const currentYear = new Date().getFullYear();
+
 export function Footer() {
   return (
     <Box component="footer" sx={{ borderTop: '1px solid', borderColor: 'divider' }}>
@@ -15,7 +17,8 @@ export function Footer() {
           py: 5,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
+          alignItems: 'center',
+          textAlign: 'center',
           gap: 1,
         }}
       >
@@ -23,15 +26,15 @@ export function Footer() {
         <Text tone="muted" size="sm">
           {contactInfo.address}
         </Text>
-        <Text tone="muted" size="sm">
-          {contactInfo.whatsappDisplay}
+        <Text tone="muted" size="sm" sx={{ mt: 2 }}>
+          © {currentYear} Odontología Integral. Todos los derechos reservados.
         </Text>
         <Link
           href="https://mabell.ar"
           target="_blank"
           rel="noopener noreferrer"
           underline="hover"
-          sx={{ mt: 2, fontSize: 11, letterSpacing: '0.03em', color: 'grey.500' }}
+          sx={{ mt: 1, fontSize: 11, letterSpacing: '0.03em', color: 'grey.500' }}
         >
           Diseño y desarrollo MaBell Tecnología Creativa
         </Link>
