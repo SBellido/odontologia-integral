@@ -102,6 +102,8 @@ Basado en la opción "C — Cálido intermedio" validada por mockup.
 
 - `firebase.json` configura Hosting apuntando a `dist/` (build de Vite), con rewrite a `index.html` (SPA).
 - Deploy manual vía `firebase deploy` cuando el usuario lo decida (no se automatiza en este proyecto).
+- La creación del proyecto de Firebase (`firebase login`, `firebase projects:create` o alta desde la consola) la hace el usuario con su propia cuenta de Google — no es una acción que se automatice acá. El plan de implementación deja instrucciones paso a paso para esto.
+- **Dominio custom**: el usuario tiene `odontologiaintegral.ar` registrado en Donweb. Conectarlo a Firebase Hosting requiere, del lado del usuario: agregar el dominio en Firebase Hosting (consola) y cargar los registros DNS que Firebase indique (A o TXT de verificación) en el panel de Donweb. Se documentan los pasos exactos en el plan de implementación; no se puede automatizar sin acceso a esas cuentas.
 
 ## Fuera de alcance (explícitamente no incluido ahora)
 
