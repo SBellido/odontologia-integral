@@ -6,11 +6,13 @@ export interface Doctor {
   photoUrl: string;
 }
 
+import type { IconName } from '../components/atoms/Icon';
+
 export interface Service {
   id: string;
   name: string;
   description: string;
-  icon: string;
+  icon: IconName;
 }
 
 export interface ContactInfo {

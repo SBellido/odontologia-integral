@@ -26,31 +26,8 @@
   --max-width: 1120px;
 }
 
-/* Tema oscuro cuando el sistema del visitante lo pide y no hay override explícito */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --color-bg: #0a0a0a;
-    --color-surface: #141414;
-    --color-ink: #f5f5f5;
-    --color-ink-soft: #c9c9c9;
-    --color-muted: #8a8a8a;
-    --color-line: #2a2a2a;
-    --gradient-dark: linear-gradient(160deg, #1c1c1c 0%, #050505 100%);
-    --gradient-text: linear-gradient(90deg, #f5f5f5, #a3a3a3);
-  }
-}
-
-/* Override explícito de tema oscuro (toggle manual, si se agrega en el futuro) */
-:root[data-theme='dark'] {
-  --color-bg: #0a0a0a;
-  --color-surface: #141414;
-  --color-ink: #f5f5f5;
-  --color-ink-soft: #c9c9c9;
-  --color-muted: #8a8a8a;
-  --color-line: #2a2a2a;
-  --gradient-dark: linear-gradient(160deg, #1c1c1c 0%, #050505 100%);
-  --gradient-text: linear-gradient(90deg, #f5f5f5, #a3a3a3);
-}
+/* Diseño de un solo tema (blanco fijo), según el mockup aprobado por el cliente:
+   no se adapta al modo oscuro del sistema para mantener siempre el look acordado. */
 
 * {
   box-sizing: border-box;

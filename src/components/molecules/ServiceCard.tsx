@@ -11,7 +11,7 @@ interface ServiceCardProps {
 export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <article className="service-card">
-      <Icon symbol={service.icon} label={service.name} />
+      <Icon name={service.icon} label={service.name} />
       <Heading level={3}>{service.name}</Heading>
       <Text tone="soft" size="sm">
         {service.description}

@@ -72,7 +72,8 @@ Basado en la opción "C — Cálido intermedio" validada por mockup.
 
 - **Paleta**: blanco `#ffffff` (base), negro `#0a0a0a` (texto/acentos), gris secundario `#555555` / `#999999`, degradé `#0a0a0a → #2b2b2b` usado puntualmente (tarjeta de Adrián, botones, texto destacado).
 - **Tipografía**: serif de display (Georgia/Fraunces) para títulos, sans-serif del sistema para cuerpo y UI.
-- **Tema claro/oscuro**: tokens CSS en `tokens.css` con `:root`, `@media (prefers-color-scheme: dark)` guardado con `:not([data-theme="light"])`, y `:root[data-theme="dark"]` — el sitio respeta el modo del sistema del visitante.
+- **Un solo tema (blanco fijo)**: el sitio no se adapta al modo oscuro del sistema operativo del visitante — se decidió mantener siempre el look blanco/negro del mockup aprobado, sin importar la preferencia de tema del dispositivo.
+- **Íconos**: SVG en línea (trazo simple, sin relleno), no emoji — coherentes con la paleta blanco/negro.
 - **Logo**: provisto por el usuario (isotipo en degradé negro con "Odontología Integral" en texto negro). Se guarda en `src/assets/logo.png` y se usa en `Logo.tsx` (Header y Footer).
 
 ## Contenido y secciones (Home, one-page con scroll)

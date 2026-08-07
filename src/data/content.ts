@@ -22,25 +22,25 @@ export const services: Service[] = [
     id: 'endodoncia',
     name: 'Endodoncia',
     description: 'Tratamientos de conducto para preservar la pieza dental original.',
-    icon: '🦷',
+    icon: 'tooth',
   },
   {
     id: 'implantes',
     name: 'Implantes dentales',
     description: 'Reemplazo de piezas perdidas con implantes de calidad.',
-    icon: '⚙️',
+    icon: 'implant',
   },
   {
     id: 'odontopediatria',
     name: 'Odontopediatría',
     description: 'Atención dental pensada especialmente para niños.',
-    icon: '🧒',
+    icon: 'child',
   },
   {
     id: 'ortodoncia',
     name: 'Ortodoncia',
     description: 'Corrección de la alineación dental para todas las edades.',
-    icon: '✨',
+    icon: 'braces',
   },
 ];
 
