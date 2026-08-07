@@ -2,14 +2,31 @@ import { contactInfo } from '../../data/content';
 import { Heading } from '../atoms/Heading';
 import { ContactInfoItem } from '../molecules/ContactInfoItem';
 import { WhatsAppButton } from '../molecules/WhatsAppButton';
+import { logContactClick } from '../../firebase/contacts';
 import './ContactSection.css';
+
+const whatsappHref = `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(
+  'Hola, quiero consultar sobre un turno en Odontología Integral.',
+)}`;
 
 export function ContactSection() {
   return (
     <section id="contacto" className="contact-section">
       <div className="contact-section__info">
         <Heading level={2}>Contacto</Heading>
-        <ContactInfoItem label="WhatsApp">{contactInfo.whatsappDisplay}</ContactInfoItem>
+        <ContactInfoItem label="WhatsApp">
+          <a
+            className="contact-section__whatsapp-link"
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              logContactClick('contact-section-number').catch(() => {});
+            }}
+          >
+            {contactInfo.whatsappDisplay}
+          </a>
+        </ContactInfoItem>
         <ContactInfoItem label="Horarios">{contactInfo.hours}</ContactInfoItem>
         <ContactInfoItem label="Dirección">{contactInfo.address}</ContactInfoItem>
         <WhatsAppButton source="contact-section" />

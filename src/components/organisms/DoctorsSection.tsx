@@ -8,7 +8,7 @@ export function DoctorsSection() {
     <section id="nosotros" className="doctors-section">
       <Heading level={2}>Nosotros</Heading>
       <div className="doctors-section__grid">
-        <DoctorCard doctor={doctors[0]} tone="dark" />
+        <DoctorCard doctor={doctors[0]} tone="light" />
         <DoctorCard doctor={doctors[1]} tone="light" />
       </div>
     </section>
