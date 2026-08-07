@@ -1,0 +1,10 @@
+.whatsapp-button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whatsapp-button--icon-only {
+  padding: 10px;
+  line-height: 0;
+}

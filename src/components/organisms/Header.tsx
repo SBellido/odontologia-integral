@@ -8,7 +8,7 @@ export function Header() {
     <header className="header">
       <div className="header__inner">
         <a href="#top" className="header__brand" aria-label="Odontología Integral — inicio">
-          <Logo size={36} />
+          <Logo size={64} />
         </a>
         <nav className="header__nav">
           <NavLink href="#servicios">Servicios</NavLink>
@@ -16,7 +16,7 @@ export function Header() {
           <NavLink href="#contacto">Contacto</NavLink>
         </nav>
         <div className="header__cta">
-          <WhatsAppButton source="header" label="WhatsApp" variant="outline" />
+          <WhatsAppButton source="header" label="Contactar por WhatsApp" variant="outline" iconOnly />
         </div>
       </div>
     </header>
