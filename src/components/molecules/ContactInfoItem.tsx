@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { Text } from '../atoms/Text';
-import './ContactInfoItem.css';
 
 interface ContactInfoItemProps {
   label: string;
@@ -9,11 +10,15 @@ interface ContactInfoItemProps {
 
 export function ContactInfoItem({ label, children }: ContactInfoItemProps) {
   return (
-    <div className="contact-info-item">
-      <span className="contact-info-item__label">{label}</span>
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+      <Typography
+        sx={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'grey.500' }}
+      >
+        {label}
+      </Typography>
       <Text tone="soft" size="md">
         {children}
       </Text>
-    </div>
+    </Box>
   );
 }

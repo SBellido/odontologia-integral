@@ -1,4 +1,4 @@
-import './Icon.css';
+import SvgIcon from '@mui/material/SvgIcon';
 
 export type IconName = 'tooth' | 'implant' | 'child' | 'braces';
 
@@ -35,18 +35,22 @@ const paths: Record<IconName, JSX.Element> = {
 
 export function Icon({ name, label }: IconProps) {
   return (
-    <svg
-      className="icon"
+    <SvgIcon
       viewBox="0 0 24 24"
-      role="img"
       aria-label={label}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      titleAccess={label}
+      sx={{
+        width: 28,
+        height: 28,
+        color: 'text.primary',
+        fill: 'none',
+        stroke: 'currentColor',
+        strokeWidth: 1.4,
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
+      }}
     >
       {paths[name]}
-    </svg>
+    </SvgIcon>
   );
 }

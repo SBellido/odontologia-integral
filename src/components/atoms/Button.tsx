@@ -1,36 +1,29 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
-import './Button.css';
+import type React from 'react';
+import MuiButton, { type ButtonProps as MuiButtonProps } from '@mui/material/Button';
+import { gradientDark } from '../../theme';
 
-interface BaseProps {
+interface ButtonProps extends Omit<MuiButtonProps, 'variant' | 'color'> {
   variant?: 'solid' | 'outline';
-  children: ReactNode;
+  component?: React.ElementType;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
-type ButtonProps = BaseProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
-    as?: 'button';
-  };
+export function Button({ variant = 'solid', sx, ...rest }: ButtonProps) {
+  const variantSx =
+    variant === 'solid'
+      ? {
+          background: gradientDark,
+          color: '#ffffff',
+          '&:hover': { background: gradientDark, opacity: 0.88 },
+        }
+      : {
+          border: '1px solid',
+          borderColor: 'divider',
+          color: 'text.primary',
+          '&:hover': { borderColor: 'text.primary', backgroundColor: 'transparent' },
+        };
 
-type LinkButtonProps = BaseProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    as: 'a';
-  };
-
-export function Button(props: ButtonProps | LinkButtonProps) {
-  const { variant = 'solid', children, className, as: _as, ...rest } = props;
-  const classes = ['btn', `btn--${variant}`, className].filter(Boolean).join(' ');
-
-  if (props.as === 'a') {
-    return (
-      <a className={classes} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
-        {children}
-      </a>
-    );
-  }
-
-  return (
-    <button className={classes} {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}>
-      {children}
-    </button>
-  );
+  return <MuiButton disableElevation sx={{ ...variantSx, ...sx }} {...rest} />;
 }

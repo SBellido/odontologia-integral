@@ -11,6 +11,7 @@ Sitio de presencia y captación de pacientes para el consultorio "Odontología I
 
 - **React + TypeScript**, bundler **Vite**.
 - **Firebase**: Hosting para deploy, Firestore inicializado con una colección `contacts` que registra cada click en el botón de WhatsApp (para tener historial desde ya, sin exponer un formulario visible todavía). Pensado para poder crecer a turnos online más adelante sin rehacer la base.
+- **MUI v6** (`@mui/material` + `@emotion`) como sistema de diseño: no hay archivos `.css` propios, todo el estilo vive en el `theme` (`src/theme.ts`) y en la prop `sx` de cada componente.
 - **Atomic Design** en `src/components/`.
 - Código (archivos, componentes, props, tipos) en **inglés**. Comentarios en **español**, solo donde algo no sea obvio a partir del código (ej. por qué se registra el click de WhatsApp en Firestore).
 
@@ -78,20 +79,23 @@ Basado en la opción "C — Cálido intermedio" validada por mockup.
 
 ## Contenido y secciones (Home, one-page con scroll)
 
-1. **Header**: `Logo` + nav anclada a secciones (`#servicios`, `#nosotros`, `#contacto`) + `WhatsAppButton` visible.
-2. **Hero**: título con `GradientText` de acento + CTA "Agendar consulta" → WhatsApp.
-3. **Servicios** (grilla única, 4 tarjetas): Endodoncia, Implantes dentales, Odontopediatría, Ortodoncia — ícono + descripción corta.
-4. **Nosotros / Doctores**: `DoctorCard` para cada uno.
+1. **Header**: `Logo` + nav anclada a secciones (`#servicios`, `#obras-sociales`, `#nosotros`, `#contacto`) + `WhatsAppButton` en versión solo-ícono.
+2. **Hero**: imagen de banner a ancho completo (foto del consultorio/instrumental) con scrim oscuro para legibilidad, título con `GradientText` (variante clara) de acento + CTA "Agendar consulta" → WhatsApp.
+3. **Servicios** (grilla única, 4 tarjetas): Endodoncia, Implantes dentales, Odontopediatría, Ortodoncia — ícono SVG en línea + descripción corta.
+4. **Obras sociales**: texto aclarando que se trabaja con las principales obras sociales y también con pacientes particulares, más una fila horizontal de logos (`insuranceProviders` en `content.ts`, vacía hasta que el cliente envíe los logos).
+5. **Nosotros / Doctores**: `DoctorCard` para cada uno, ambas en tono gris claro (sin variante oscura).
    - **Adrián Nader** (MP 13452) — Endodoncia, Implantes dentales
    - **Carolina Bellido** (MP 80534) — Odontopediatría, Ortodoncia
    - En vez de foto, cada tarjeta muestra la matrícula profesional (MP).
-5. **Contacto**:
-   - WhatsApp: **+54 9 11 5834-8249** (link `wa.me`, con mensaje predefinido)
+6. **Contacto**:
+   - WhatsApp: **+54 9 11 5834-8249** (botón y número como link `wa.me`, con mensaje predefinido)
    - Horarios: Lunes a Viernes, 9:00 a 20:00 hs
    - Dirección: Domingo de Acassuso 6201, B1606 Carapachay, Provincia de Buenos Aires, Argentina
    - Mapa embebido (Google Maps `iframe`, sin API key — embed simple)
    - Sin redes sociales por ahora (no se muestra esa sección)
-6. **Footer**: nombre del consultorio, dirección corta, WhatsApp — sin íconos de redes sociales.
+7. **Footer**: logo grande, dirección corta, WhatsApp, y leyenda "Diseño y desarrollo MaBell Tecnología Creativa" enlazada a `mabell.ar`.
+
+Todas las secciones (excepto Header y Hero) tienen una animación sutil de aparición al hacer scroll (`useScrollReveal`, basada en `IntersectionObserver`, respeta `prefers-reduced-motion`).
 
 ## Integración con Firebase (contacts)
 

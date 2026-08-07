@@ -1,8 +1,11 @@
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import type { Doctor } from '../../types';
 import { Heading } from '../atoms/Heading';
 import { Text } from '../atoms/Text';
 import { Badge } from '../atoms/Badge';
-import './DoctorCard.css';
+import { gradientDark } from '../../theme';
 
 interface DoctorCardProps {
   doctor: Doctor;
@@ -10,20 +13,35 @@ interface DoctorCardProps {
 }
 
 export function DoctorCard({ doctor, tone }: DoctorCardProps) {
+  const isDark = tone === 'dark';
+
   return (
-    <article className={`doctor-card doctor-card--${tone}`}>
-      <div className="doctor-card__specialties">
+    <Box
+      component="article"
+      sx={{
+        p: 5,
+        borderRadius: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 1,
+        background: isDark ? gradientDark : 'background.paper',
+        color: isDark ? '#ffffff' : 'text.primary',
+      }}
+    >
+      <Stack direction="row" gap={1} flexWrap="wrap" mb={1}>
         {doctor.specialties.map((specialty) => (
-          <Badge key={specialty} tone={tone === 'dark' ? 'inverted' : 'default'}>
+          <Badge key={specialty} tone={isDark ? 'inverted' : 'default'}>
             {specialty}
           </Badge>
         ))}
-      </div>
+      </Stack>
       <Heading level={3}>{doctor.name}</Heading>
-      <Text tone={tone === 'dark' ? 'inverted' : 'soft'} size="sm">
+      <Text tone={isDark ? 'inverted' : 'soft'} size="sm">
         {doctor.bio}
       </Text>
-      <span className="doctor-card__license">{doctor.licenseNumber}</span>
-    </article>
+      <Typography sx={{ fontSize: 12, letterSpacing: '0.04em', opacity: 0.7, mt: 1 }}>
+        {doctor.licenseNumber}
+      </Typography>
+    </Box>
   );
 }

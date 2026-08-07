@@ -1,10 +1,17 @@
+import Box from '@mui/material/Box';
 import logoSrc from '../../assets/logo.svg';
-import './Logo.css';
 
 interface LogoProps {
   size?: number;
 }
 
 export function Logo({ size = 40 }: LogoProps) {
-  return <img className="logo" src={logoSrc} alt="Odontología Integral" style={{ height: size }} />;
+  return (
+    <Box
+      component="img"
+      src={logoSrc}
+      alt="Odontología Integral"
+      sx={{ height: size, width: 'auto', display: 'block' }}
+    />
+  );
 }

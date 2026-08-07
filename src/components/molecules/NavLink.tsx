@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import './NavLink.css';
+import Link from '@mui/material/Link';
 
 interface NavLinkProps {
   href: string;
@@ -8,8 +8,16 @@ interface NavLinkProps {
 
 export function NavLink({ href, children }: NavLinkProps) {
   return (
-    <a className="nav-link" href={href}>
+    <Link
+      href={href}
+      underline="hover"
+      sx={{
+        fontSize: 14,
+        color: 'text.secondary',
+        '&:hover': { color: 'text.primary' },
+      }}
+    >
       {children}
-    </a>
+    </Link>
   );
 }

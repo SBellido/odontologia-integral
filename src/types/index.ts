@@ -1,3 +1,5 @@
+import type { IconName } from '../components/atoms/Icon';
+
 export interface Doctor {
   id: string;
   name: string;
@@ -5,8 +7,6 @@ export interface Doctor {
   bio: string;
   licenseNumber: string;
 }
-
-import type { IconName } from '../components/atoms/Icon';
 
 export interface Service {
   id: string;
@@ -21,4 +21,10 @@ export interface ContactInfo {
   address: string;
   hours: string;
   mapEmbedUrl: string;
+}
+
+export interface InsuranceProvider {
+  id: string;
+  name: string;
+  logoUrl: string;
 }

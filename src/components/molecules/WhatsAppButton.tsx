@@ -1,8 +1,8 @@
+import Stack from '@mui/material/Stack';
 import { Button } from '../atoms/Button';
 import { WhatsAppIcon } from '../atoms/WhatsAppIcon';
 import { contactInfo } from '../../data/content';
 import { logContactClick } from '../../firebase/contacts';
-import './WhatsAppButton.css';
 
 interface WhatsAppButtonProps {
   source: string;
@@ -23,22 +23,22 @@ export function WhatsAppButton({
 
   return (
     <Button
-      as="a"
+      component="a"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       variant={variant}
       aria-label={iconOnly ? label : undefined}
-      className={iconOnly ? 'whatsapp-button--icon-only' : undefined}
+      sx={iconOnly ? { minWidth: 'auto', p: 1.25, lineHeight: 0 } : undefined}
       onClick={() => {
         // Best-effort: si falla el registro en Firestore, no debe impedir que el usuario contacte
         logContactClick(source).catch(() => {});
       }}
     >
-      <span className="whatsapp-button__content">
+      <Stack direction="row" alignItems="center" gap={1}>
         <WhatsAppIcon size={iconOnly ? 20 : 18} />
         {!iconOnly && label}
-      </span>
+      </Stack>
     </Button>
   );
 }

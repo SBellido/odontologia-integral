@@ -1,4 +1,4 @@
-import type { ContactInfo, Doctor, Service } from '../types';
+import type { ContactInfo, Doctor, InsuranceProvider, Service } from '../types';
 
 export const doctors: Doctor[] = [
   {
@@ -43,6 +43,9 @@ export const services: Service[] = [
     icon: 'braces',
   },
 ];
+
+// Se completa cuando el cliente envíe los logos de las obras sociales con las que trabaja
+export const insuranceProviders: InsuranceProvider[] = [];
 
 // wa.me necesita el número sin espacios ni signos, con código de país
 export const contactInfo: ContactInfo = {
