@@ -1,0 +1,35 @@
+.text {
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.text--default {
+  color: var(--color-ink);
+}
+
+.text--soft {
+  color: var(--color-ink-soft);
+}
+
+.text--muted {
+  color: var(--color-muted);
+}
+
+.text--inverted {
+  color: var(--gradient-on-dark, #ffffff);
+  opacity: 0.85;
+}
+
+.text--sm {
+  font-size: 13px;
+}
+
+.text--md {
+  font-size: 15px;
+}
+
+.text--lg {
+  font-size: 17px;
+}
