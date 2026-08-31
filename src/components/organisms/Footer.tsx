@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
-import { contactInfo } from '../../data/content';
 import { Logo } from '../atoms/Logo';
 import { Text } from '../atoms/Text';
 
@@ -22,10 +22,10 @@ export function Footer() {
           gap: 1,
         }}
       >
-        <Logo size={72} />
-        <Text tone="muted" size="sm">
-          {contactInfo.address}
-        </Text>
+        <Box>
+          <Logo size={72} />
+        </Box>
+        <Divider sx={{ width: '100%', maxWidth: 320, mt: 2 }} />
         <Text tone="muted" size="sm" sx={{ mt: 2 }}>
           © {currentYear} Odontología Integral. Todos los derechos reservados.
         </Text>
